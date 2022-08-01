@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/platform_metroidvania asset pack v1.01/miscellaneous sprites/trap_suspended_anim_strip_18.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -104.1 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "swing"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -104.1, 104.1, -104.1 ]
+}
+
+[node name="swinging trap" type="Node2D"]
+rotation = -1.81689
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 17 )
+texture = ExtResource( 1 )
+hframes = 18
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 0, 17, -6, 17, -8, 19, -11, 20, -8, 22, -8, 26, -11, 29, -8, 30, -8, 35, -12, 37, -8, 38, -8, 43, -11, 44, -8, 46, -6, 48, 6, 48, 8, 47, 11, 45, 8, 42, 8, 39, 11, 37, 8, 35, 8, 31, 11, 29, 8, 27, 8, 23, 12, 21, 8, 19, 7, 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/swing = SubResource( 2 )
