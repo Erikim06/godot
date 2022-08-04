@@ -76,6 +76,7 @@ hframes = 7
 frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "spike trigger"
 anims/RESET = SubResource( 2 )
 "anims/spike trigger" = SubResource( 3 )
 
