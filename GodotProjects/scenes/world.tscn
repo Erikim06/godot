@@ -327,6 +327,10 @@ position = Vector2( 387, 562 )
 [node name="Path2D" parent="TileMap/SpiningBlade" index="0"]
 curve = SubResource( 30 )
 
+[node name="PathFollow2D" parent="TileMap/SpiningBlade/Path2D" index="0"]
+position = Vector2( 6, -23 )
+rotation = -0.0256353
+
 [editable path="DoorAndButton"]
 [editable path="SpiningBlade2"]
 [editable path="SpiningBlade"]
