@@ -6,7 +6,7 @@ var current_spawn = null
 func reset():
 	current_spawn = null
 	get_tree().reload_current_scene()
-	game_start_time = OS.get_tickets_msec()
+	game_start_time = OS.get_ticks_msec()
 	
 func check_reset():
 	if current_spawn == null:

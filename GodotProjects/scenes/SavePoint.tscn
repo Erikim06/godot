@@ -143,3 +143,5 @@ anims/saved = SubResource( 4 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 9
+
+[connection signal="body_entered" from="." to="." method="_on_SavePoint_body_entered"]
