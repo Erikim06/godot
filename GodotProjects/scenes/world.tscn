@@ -8,19 +8,7 @@
 [ext_resource path="res://scenes/DoorAndButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/SpiningBlade.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/SavePoint.tscn" type="PackedScene" id=8]
-
-[sub_resource type="GDScript" id=25]
-script/source = "extends Node2D
-
-func _ready():
-	pass
-	
-func _process(delta):
-
-	if Input.is_action_just_pressed(\"reset\"):
-		GameStats.reset()
-	
-"
+[ext_resource path="res://scenes/world.gd" type="Script" id=9]
 
 [sub_resource type="Curve2D" id=28]
 _data = {
@@ -231,7 +219,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/z_index = 0
 
 [node name="world" type="Node2D"]
-script = SubResource( 25 )
+script = ExtResource( 9 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 76, -2 )
@@ -290,20 +278,20 @@ position = Vector2( -138, 76 )
 [node name="SpiningBlade2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 430, 277 )
 
-[node name="Path2D" parent="SpiningBlade2" index="0"]
+[node name="AnimationPlayer" parent="SpiningBlade2" index="0"]
+root_node = NodePath("../../SpiningBlade2")
+
+[node name="Path2D" parent="SpiningBlade2" index="1"]
 curve = SubResource( 28 )
 
 [node name="PathFollow2D" parent="SpiningBlade2/Path2D" index="0"]
 position = Vector2( -191, 5 )
 rotation = -0.0179355
 
-[node name="AnimationPlayer" parent="SpiningBlade2" index="1"]
-root_node = NodePath("../../SpiningBlade2")
-
 [node name="SpiningBlade" parent="." instance=ExtResource( 7 )]
 position = Vector2( 363, 200 )
 
-[node name="Path2D" parent="SpiningBlade" index="0"]
+[node name="Path2D" parent="SpiningBlade" index="1"]
 curve = SubResource( 27 )
 
 [node name="PathFollow2D" parent="SpiningBlade/Path2D" index="0"]
@@ -316,28 +304,28 @@ position = Vector2( -3.38463, -1.52103 )
 [node name="SpiningBlade3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 373, 560 )
 
-[node name="Path2D" parent="SpiningBlade3" index="0"]
+[node name="AnimationPlayer" parent="SpiningBlade3" index="0"]
+root_node = NodePath("../../SpiningBlade3")
+
+[node name="Path2D" parent="SpiningBlade3" index="1"]
 curve = SubResource( 29 )
 
 [node name="PathFollow2D" parent="SpiningBlade3/Path2D" index="0"]
 position = Vector2( 6, -23 )
 rotation = 0.0270212
 
-[node name="AnimationPlayer" parent="SpiningBlade3" index="1"]
-root_node = NodePath("../../SpiningBlade3")
-
 [node name="SpiningBlade4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 419, 626 )
 
-[node name="Path2D" parent="SpiningBlade4" index="0"]
+[node name="AnimationPlayer" parent="SpiningBlade4" index="0"]
+root_node = NodePath("../../SpiningBlade4")
+
+[node name="Path2D" parent="SpiningBlade4" index="1"]
 curve = SubResource( 30 )
 
 [node name="PathFollow2D" parent="SpiningBlade4/Path2D" index="0"]
 position = Vector2( 6, -23 )
 rotation = -0.0256353
-
-[node name="AnimationPlayer" parent="SpiningBlade4" index="1"]
-root_node = NodePath("../../SpiningBlade4")
 
 [node name="SavePoint" parent="." instance=ExtResource( 8 )]
 position = Vector2( 91, 38 )
