@@ -40,7 +40,6 @@ tracks/0/keys = {
 
 [node name="SpiningBlade" type="Node2D"]
 script = ExtResource( 2 )
-follow_speed = null
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = null
