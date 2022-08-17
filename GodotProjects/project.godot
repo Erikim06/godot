@@ -20,8 +20,8 @@ GameStats="*res://scrips/game_stats.gd"
 
 [display]
 
-window/size/width=1280
-window/size/height=720
+window/size/width=1500
+window/size/height=1000
 window/size/test_width=1280
 window/size/test_height=720
 window/stretch/mode="2d"
