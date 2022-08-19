@@ -42,13 +42,12 @@ position = Vector2( 0, 17 )
 texture = ExtResource( 1 )
 hframes = 18
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Deadly"]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( 0, 17, -6, 17, -8, 19, -11, 20, -8, 22, -8, 26, -11, 29, -8, 30, -8, 35, -12, 37, -8, 38, -8, 43, -11, 44, -8, 46, -6, 48, 6, 48, 8, 47, 11, 45, 8, 42, 8, 39, 11, 37, 8, 35, 8, 31, 11, 29, 8, 27, 8, 23, 12, 21, 8, 19, 7, 17 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
 anims/RESET = SubResource( 1 )
 anims/swing = SubResource( 2 )
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
