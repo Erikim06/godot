@@ -4,14 +4,13 @@ var target = null
 var zoomed = false
 var center = Vector2.ZERO
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	center = get_viewport_rect(). size/2
+	center = get_viewport_rect().size/2
+	target = owner.get_node("player")
+	
+	position = target.global_position
+	zoom = Vector2(.3,.3)
 
 func _process(delta):
 	if Input.is_action_just_pressed("Zoom"):
@@ -23,9 +22,12 @@ func _process(delta):
 			zoomed = true
 
 	if zoomed:
-		zoom = Vector2(0.3,0.3)
 		position = target.global_position
+		zoom = Vector2(.3,.3)
 
+
+	
 	else:
-		zoom = Vector2(1,1)
 		position = center
+		zoom = Vector2(1,1)
+		
