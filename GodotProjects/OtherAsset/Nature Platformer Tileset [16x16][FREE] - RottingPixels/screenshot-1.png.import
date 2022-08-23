@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/screenshot-2.png-fe9635745fcc0b8ca09b7bd4e059b0a7.stex"
+path="res://.import/screenshot-1.png-3ffc1f39d4e8eb21a562f0302ca64e62.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Nature Platformer Tileset [16x16][FREE] - RottingPixels/screenshot-2.png"
-dest_files=[ "res://.import/screenshot-2.png-fe9635745fcc0b8ca09b7bd4e059b0a7.stex" ]
+source_file="res://OtherAsset/Nature Platformer Tileset [16x16][FREE] - RottingPixels/screenshot-1.png"
+dest_files=[ "res://.import/screenshot-1.png-3ffc1f39d4e8eb21a562f0302ca64e62.stex" ]
 
 [params]
 
