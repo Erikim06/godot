@@ -6,7 +6,8 @@ func _ready():
 func _process(delta):
 
 	if Input.is_action_just_pressed("reset"):
-		GameStats.reset()
+		#GameStats.reset()
+		print("Reset")
 	print(GameStats.get_time())
 	$CanvasLayer/Control/Label.text = GameStats.get_time()
 
