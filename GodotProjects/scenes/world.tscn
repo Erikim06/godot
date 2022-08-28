@@ -567,10 +567,6 @@ rotation = -0.0293918
 [node name="SpikeTrap13" parent="Area2D" instance=ExtResource( 5 )]
 position = Vector2( -342.496, -216.03 )
 rotation = -0.0293848
-<<<<<<< HEAD
-=======
-scale = Vector2( 1, 1 )
->>>>>>> parent of 63134c4 (1)
 
 [node name="DoorAndButton" parent="." instance=ExtResource( 6 )]
 position = Vector2( 337, 28 )
@@ -662,7 +658,7 @@ position = Vector2( 32, 64 )
 tile_set = SubResource( 55 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 2490408, 1073741825, 0, 2490409, 1073741825, 0 )
+tile_data = PoolIntArray( 1310745, 0, 0 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
