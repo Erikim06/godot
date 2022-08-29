@@ -1,10 +1,10 @@
 extends Node2D
 onready var arrow = $Arrow
-var  arrow_speed = 200
+export (int) var arrow_speed = 175
 
 
 
-func _Process(delta):
+func _process(delta):
 	arrow.translate(Vector2.LEFT *arrow_speed * delta)
 
 
