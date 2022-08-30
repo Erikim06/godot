@@ -10,9 +10,15 @@ var velocity = Vector2.ZERO
 export (float) var friction = 10
 export (float) var acceleration = 25
 
-enum state {IDLE, RUNNING, PUSHING, ROLLING, JUMP, STARTJUMP, FALL, ATTACK}
+enum state {IDLE, RUNNING, PUSHING, ROLLING, JUMP, STARTJUMP, FALL, ATTACK, ROPEJUMP}
 
 onready var player_state= state.IDLE
+
+
+
+var rope_grabbed = false
+var rope_part = null
+var can_grab = true
 
 func _ready():
 	$AnimationPlayer.play("idle")
@@ -44,9 +50,11 @@ func handle_state(player_state):
 	match(player_state):
 		state.STARTJUMP:
 			velocity.y = jump_speed
-	pass 
+		state.ROPEJUMP:
+			velocity.y = jump_speed/2
+	pass
 	
-func get_input():
+func get_input():																																																																																																																																																																																																																																																									
 	var dir = Input.get_action_strength("right") - Input.get_action_strength("left")
 	if dir != 0:
 		velocity.x = move_toward(velocity.x, dir*speed, acceleration)
