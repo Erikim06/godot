@@ -155,4 +155,14 @@ anims/running = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 shape = SubResource( 9 )
 
+[node name="ROPE NODES BELOW" type="Node2D" parent="."]
+
+[node name="GrabZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabZone"]
+
+[node name="RopeTimer" type="Timer" parent="GrabZone/CollisionShape2D"]
+
 [connection signal="area_entered" from="DeathZone" to="." method="_on_DeathZone_area_entered"]
+[connection signal="area_entered" from="GrabZone" to="." method="_on_GrabZone_area_entered"]
+[connection signal="timeout" from="GrabZone/CollisionShape2D/RopeTimer" to="." method="_on_RopeTimer_timeout"]

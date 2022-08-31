@@ -495,7 +495,7 @@ position = Vector2( 16, 27 )
 script = ExtResource( 9 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1003, 64 )
+position = Vector2( 965, 64 )
 
 [node name="SpikeTrap" parent="player" instance=ExtResource( 5 )]
 position = Vector2( 4, -245 )
@@ -676,6 +676,9 @@ rotation = -3.14159
 position = Vector2( 161, 283 )
 rotation = -3.14159
 
+[node name="RopeSwing" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1042, -1.00006 )
+
 [node name="AudioStreamPlayer" parent="." instance=ExtResource( 13 )]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -710,9 +713,6 @@ margin_bottom = 93.0
 custom_fonts/font = SubResource( 32 )
 text = "00:00:00"
 align = 2
-
-[node name="RopeSwing" parent="." instance=ExtResource( 14 )]
-position = Vector2( 1118, 33 )
 
 [editable path="DoorAndButton"]
 [editable path="SpiningBlade"]

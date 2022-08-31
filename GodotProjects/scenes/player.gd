@@ -78,7 +78,7 @@ func _physics_process(delta):
 	if velocity == Vector2.ZERO:
 		player_state = state.IDLE
 	
-	if (Input.is_action_just_pressed("jump") and is_on_floor()) or rope_release:
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or rope_release):
 		if rope_release:
 			player_state = state.ROPEJUMP
 		else:
@@ -105,3 +105,14 @@ func _on_DeathZone_area_entered(area):
 	if area.is_in_group("Deadly"):
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
+
+
+func _on_GrabZone_area_entered(area):
+	if area.is_in_group("Rope") and can_grab:
+		rope_grabbed = true
+		rope_part = area
+		can_grab = false
+
+
+func _on_RopeTimer_timeout():
+	can_grab = true
