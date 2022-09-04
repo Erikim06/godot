@@ -54,7 +54,7 @@ func handle_state(player_state):
 			velocity.y = jump_speed/2
 	pass
 	
-func get_input():																																																																																																																																																																																																																																																									
+func get_input():
 	var dir = Input.get_action_strength("right") - Input.get_action_strength("left")
 	if dir != 0:
 		velocity.x = move_toward(velocity.x, dir*speed, acceleration)
