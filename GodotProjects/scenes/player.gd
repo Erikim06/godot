@@ -78,17 +78,18 @@ func _physics_process(delta):
 	if velocity == Vector2.ZERO:
 		player_state = state.IDLE
 	
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or rope_release):
+	if (Input.is_action_just_pressed("jump") and is_on_floor()) or rope_release:
 		if rope_release:
 			player_state = state.ROPEJUMP
 		else:
 			player_state = state.STARTJUMP
-	
+
+
+
 	elif velocity.x != 0:
 		player_state = state.RUNNING
 	
-	
-	if not is_on_floor():
+	if not is_on_floor() and not rope_release:
 		if velocity.y < 0:
 			player_state = state.JUMP
 		if velocity.y > 0:
