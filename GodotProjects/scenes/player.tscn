@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://sprites/platform_metroidvania asset pack v1.01/herochar sprites(new)/herochar_spritesheet(new).png" type="Texture" id=1]
 [ext_resource path="res://running.tres" type="Animation" id=2]
@@ -127,6 +127,10 @@ tracks/0/keys = {
 radius = 5.0
 height = 2.0
 
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 2.0
+height = 0.0
+
 [node name="player" type="KinematicBody2D" groups=["player"]]
 script = ExtResource( 3 )
 
@@ -160,6 +164,7 @@ shape = SubResource( 9 )
 [node name="GrabZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabZone"]
+shape = SubResource( 10 )
 
 [node name="RopeTimer" type="Timer" parent="GrabZone/CollisionShape2D"]
 
