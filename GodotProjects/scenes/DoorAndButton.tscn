@@ -12,7 +12,7 @@ extents = Vector2( 8.24744, 1 )
 extents = Vector2( 7.11856, 3.16667 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 7, 24 )
+extents = Vector2( 8, 24 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "ButtonDown"
@@ -248,7 +248,6 @@ __meta__ = {
 [node name="Door" type="StaticBody2D" parent="Door"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Door"]
-position = Vector2( 1, 0 )
 shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
