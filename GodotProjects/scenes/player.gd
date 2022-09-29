@@ -117,3 +117,9 @@ func _on_GrabZone_area_entered(area):
 
 func _on_RopeTimer_timeout():
 	can_grab = true
+
+
+func _on_Area2D2_area_entered(area):
+	if area.is_in_group("Win"):
+			if GameStats.check_reset() == false:
+				get_tree().change_scene("res://scenes/Menu.tscn")
