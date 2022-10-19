@@ -13,7 +13,9 @@ func _ready():
 
 
 
-func _on_Area2D_body_entered(body):
-	if body.is_in_group("player"):
+
+
+func _on_Area2D2_body_entered(body):
+	if body.is_in_group("Player"):
 		print("player win")
 		get_tree().change_scene("res://scenes/Menu.tscn")

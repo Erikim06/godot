@@ -72,6 +72,7 @@ func _physics_process(delta):
 			rope_release = true
 		else:
 			return
+			$"../AudioStreamPlayer2D".play()
 	
 	get_input() 
 	print(is_on_floor())
